@@ -8,6 +8,6 @@ class Gig extends Model
 {
     public function profile()
     {
-        return $this->belongsTo('App\Profile');
+        return $this->belongsTo('App\Profile', 'foreign_key');
     }
 }

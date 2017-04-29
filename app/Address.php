@@ -8,6 +8,6 @@ class Address extends Model
 {
     public function profile()
     {
-        return $this->belongsTo('App\Profile');
+        return $this->belongsToMany('App\Profile', 'foreign_key');
     }
 }
