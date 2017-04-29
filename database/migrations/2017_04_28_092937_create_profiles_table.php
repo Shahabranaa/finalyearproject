@@ -20,6 +20,7 @@ class CreateProfilesTable extends Migration
             $table->string('cnic');
             $table->string('phone');
             $table->increments('id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

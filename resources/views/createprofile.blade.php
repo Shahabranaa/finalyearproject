@@ -48,14 +48,14 @@
                                                 <li class="list-group-item">
                                                     Urdu
                                                     <div class="maXterial-switch pull-right">
-                                                        <input id="languagesUrdu" name="language[]" type="checkbox" value="{{ old('languageUrdu') }}"required="required"/>
+                                                        <input id="languagesUrdu" name="language[]" type="checkbox" value="urdu"required="required"/>
                                                         <label for="languagesUrdu" class="label-primary"></label>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
                                                     Punjabi
                                                     <div class="maXterial-switch pull-right">
-                                                        <input id="languagePunjabi" name="language[]" type="checkbox" value="{{ old('languagePanjabi') }}"required="required"/>
+                                                        <input id="languagePunjabi" name="language[]" type="checkbox" value="punjabi"required="required"/>
                                                         <label for="languagePunjabi" class="label-primary"></label>
                                                     </div>
                                                 </li>
@@ -101,14 +101,14 @@
                                                 <li class="list-group-item">
                                                     Ac-Technican
                                                     <div class="pull-right">
-                                                        <input id="acTechnican" name="Skill[]" value="{{ old('acTechnican') }}" type="checkbox"required="required"/>
+                                                        <input id="acTechnican" name="Skill[]" value="acTech" type="checkbox"required="required"/>
                                                         <label for="acTechnican" class="label-primary"></label>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
                                                     Maid
                                                     <div class=" pull-right">
-                                                        <input id="maid" name="Skill[]" value="{{ old('maid') }}" type="checkbox"required="required"/>
+                                                        <input id="maid" name="Skill[]" value="maid" type="checkbox"required="required"/>
                                                         <label for="maid" class="label-primary"></label>
                                                     </div>
                                                 </li>
@@ -189,21 +189,21 @@
 
                             {{--Area Select--}}
 
-                                <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
+                                <div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
                                     <div class="col-md-2">
-                                        <select name="city" id="price" type="" class="form-control"  value="{{ old('city') }}" required>
+                                        <select name="area" id="price" type="" class="form-control"  value="{{ old('area') }}" required>
                                             <option value="">Select Area</option>
-                                            <option value="lahore">Johar town</option>
-                                            <option value="faislabad">Model town</option>
-                                            <option value="multan">Faisal town</option>
-                                            <option value="karachi">Ichara</option>
-                                            <option value="islamabad">Dha</option>
-                                            <option value="islamabad">Gulberg</option>
-                                            <option value="islamabad">EME</option>
+                                            <option value="Johar Town">Johar town</option>
+                                            <option value="Modal Town">Model town</option>
+                                            <option value="Faisal Town">Faisal town</option>
+                                            <option value="Ichara">Ichara</option>
+                                            <option value="DHA">Dha</option>
+                                            <option value="Gullberg">Gulberg</option>
+                                            <option value="EME">EME</option>
                                         </select>
-                                        @if ($errors->has('price'))
+                                        @if ($errors->has('area'))
                                             <span class="help-block">
-                                        <strong>{{ $errors->first('price') }}</strong>
+                                        <strong>{{ $errors->first('area') }}</strong>
                                     </span>
                                         @endif
                                     </div>

@@ -17,6 +17,7 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             $table->string('area');
             $table->increments('id');
+            $table->integer('profile_id');
             $table->timestamps();
         });
     }
