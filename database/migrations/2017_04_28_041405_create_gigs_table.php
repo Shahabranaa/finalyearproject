@@ -19,6 +19,7 @@ class CreateGigsTable extends Migration
             $table->string('description');
             $table->string('price');
             $table->string('image');
+            $table->integer('profile_id');
             $table->increments('id');
             $table->timestamps();
         });

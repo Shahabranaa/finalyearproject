@@ -14,6 +14,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function profile()
+    {
+        return $this->hasOne('App\Profile');
+    }
     protected $fillable = [
         'name', 'email', 'password',
     ];
