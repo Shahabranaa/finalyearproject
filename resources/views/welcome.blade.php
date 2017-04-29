@@ -1,2 +1,2 @@
 @extends('layouts.app')
-hi
+hello this is me
