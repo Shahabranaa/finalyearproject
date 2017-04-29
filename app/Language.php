@@ -9,6 +9,6 @@ class Language extends Model
     //
     public function profiles()
     {
-        return $this->belongsToMany('App\Profile', 'foreign_key');
+        return $this->belongsTo('App\Profile', 'foreign_key');
     }
 }
