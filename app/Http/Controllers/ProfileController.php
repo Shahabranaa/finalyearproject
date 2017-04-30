@@ -24,7 +24,6 @@
                 $filecnic = $request->file('cnic');
                 $filenamecnic = $filecnic->store('local');
 
-
                 $profile = new Profile();
                 $profile->bio = $request['bio'];
                 $profile->phone = $request->mobile;

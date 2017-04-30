@@ -14,8 +14,7 @@ class CreateGigsTable extends Migration
     public function up()
     {
         Schema::create('gigs', function (Blueprint $table) {
-            $table->integer('profile_id')->unsigned();
-            $table->foreign('profile_id')->references('id')->on('profiles');
+            $table->integer('profile_id');
             $table->string('gigtitle');
             $table->string('category');
             $table->string('description');
