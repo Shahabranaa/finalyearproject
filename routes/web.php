@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
 Route::get('create-gig','GigController@index')->middleware('auth');
 Route::post('create-gig','GigController@createGig')->middleware('auth');
 Route::get('profile','ProfileController@index')->middleware('auth');

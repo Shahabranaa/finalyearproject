@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('city');
             $table->string('area');
             $table->increments('id');
+            $table->boolean('isSet');
             $table->timestamps();
         });
     }
