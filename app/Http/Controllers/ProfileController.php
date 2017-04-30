@@ -35,19 +35,15 @@
             if($isProfileExist){
                 return view('home');
             }
-//          $profile->save();
             $request->user()->profile()->save($profile);
-
-//          $adrs->save();
-//          $request->user()->profile()->address()->save($adrs);
 
             if (is_array($request['language'])) {
                 foreach ($request['language'] as $lang) {
                     $l = new Language();
                     $l->language = $lang;
-//                  $l->save();
-                    $request->user()->profile()->orderBy('updated_at', 'desc')->first()->languages()->save($l);
-
+//                    $prof=$request->user()->profile;
+//                    $prof->languages()->save($l);
+                    $request->user()->profile->languages()->save($l);
                 }
             }
 
@@ -55,9 +51,11 @@
                 foreach ($request['Skill'] as $skill) {
                     $sk = new Skill();
                     $sk->skill = $skill;
-//                  $sk->save();
-                    $request->user()->profile()->orderBy('updated_at', 'desc')->first()->skills()->save($sk);
-                }
+//                    $prof=$request->user()->profile;
+//                    $prof->skills()->save($sk);
+                    $request->user()->profile->skills()->save($sk);
+//
+              }
             }
         }
     }

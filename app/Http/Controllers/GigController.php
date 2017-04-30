@@ -31,7 +31,7 @@ class GigController extends Controller
         $gig->category = $request->category;
         $gig->price = $request->price;
         $gig->image = $filename;
-        $gig->save();
+        $request->user()->profile->gigs()->save($gig);
 //        Session::flash('msg','Your data is saved now');
         return back();
 
