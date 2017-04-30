@@ -41,7 +41,7 @@
                                                 <li class="list-group-item">
                                                     English
                                                     <div class=" pull-right">
-                                                        <input id="languageEnglish" name="language[]" type="checkbox" value="{{ old('languageEnglish') }}" required="required" />
+                                                        <input id="languageEnglish" name="language[]" type="checkbox" value="english" required="required" />
                                                         <label for="languageEnglish" class="label-primary"></label>
                                                     </div>
                                                 </li>
@@ -62,14 +62,14 @@
                                                 <li class="list-group-item">
                                                     Pashtoon
                                                     <div class="maXterial-switch pull-right">
-                                                        <input id="languagePashtoon" name="language[]" type="checkbox" value="{{ old('languagePashtoon') }}"required="required"/>
+                                                        <input id="languagePashtoon" name="language[]" type="checkbox" value="pashtoon"required="required"/>
                                                         <label for="languagePashtoon" class="label-primary"></label>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
                                                     Sindi
                                                     <div class="maXterial-switch pull-right">
-                                                        <input id="languageSindi" name="language[]" type="checkbox" value="{{ old('languageSindi') }}"required="required"/>
+                                                        <input id="languageSindi" name="language[]" type="checkbox" value="sindi"required="required"/>
                                                         <label for="languageSindi" class="label-primary"></label>
                                                     </div>
                                                 </li>
@@ -87,21 +87,21 @@
                                                 <li class="list-group-item">
                                                     Plumber
                                                     <div class=" pull-right">
-                                                        <input id="plumber" name="Skill[]" value="{{ old('plumber') }}"  type="checkbox" required="required" />
+                                                        <input id="plumber" name="Skill[]" value="plumber"  type="checkbox" required="required" />
                                                         <label for="plumber" class="label-primary"></label>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
                                                     Technican
                                                     <div class=" pull-right">
-                                                        <input id="technican" name="Skill[]" value="{{ old('technican') }}" type="checkbox" required="required"/>
+                                                        <input id="technican" name="Skill[]" value="technican" type="checkbox" required="required"/>
                                                         <label for="technican" class="label-primary"></label>
                                                     </div>
                                                 </li>
                                                 <li class="list-group-item">
                                                     Ac-Technican
                                                     <div class="pull-right">
-                                                        <input id="acTechnican" name="Skill[]" value="acTech" type="checkbox"required="required"/>
+                                                        <input id="acTechnican" name="Skill[]" value="acTechnican" type="checkbox"required="required"/>
                                                         <label for="acTechnican" class="label-primary"></label>
                                                     </div>
                                                 </li>
@@ -115,7 +115,7 @@
                                                 <li class="list-group-item">
                                                     Painter
                                                     <div class=" pull-right">
-                                                        <input id="painter" name="Skill[]" value="{{ old('painter') }}" type="checkbox"required="required"/>
+                                                        <input id="painter" name="Skill[]" value="painter" type="checkbox"required="required"/>
                                                         <label for="painter" class="label-primary"></label>
                                                     </div>
                                                 </li>
