@@ -83,3 +83,10 @@
     background: inherit;
     left: 20px;
 }
+.profile-image{
+    margin: 0 auto 20px;
+    margin-top: 20px ;
+}
+body{
+    background-color: #F7F7F7;
+}

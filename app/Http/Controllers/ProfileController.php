@@ -16,6 +16,14 @@
         {
             return view('createprofile');
         }
+
+        public function profile()
+        {
+            $user = Auth::user();
+//            $profile =Profile::where('user_id' , $user->id)->first();
+            return view('profile',['user' => $user]);
+        }
+
         public function createProfile(Request $request)
         {
             $file = $request->file('profileImage');

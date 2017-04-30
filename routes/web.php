@@ -21,8 +21,10 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('create-gig','GigController@index')->middleware('auth');
 Route::post('create-gig','GigController@createGig')->middleware('auth');
-Route::get('profile','ProfileController@index')->middleware('auth');
-Route::post('profile','ProfileController@createProfile')->middleware('auth');
+Route::get('create-profile','ProfileController@index')->middleware('auth');
+Route::post('create-profile','ProfileController@createProfile')->middleware('auth');
+Route::get('profile','ProfileController@profile')->middleware('auth');
+
 
 
 
