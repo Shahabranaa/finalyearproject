@@ -11,7 +11,7 @@
 
                         {{--form start--}}
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/profile') }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/create-profile') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             {{--bio of profile--}}
