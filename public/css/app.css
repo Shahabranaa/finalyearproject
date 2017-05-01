@@ -90,3 +90,47 @@
 body{
     background-color: #F7F7F7;
 }
+.userName  {
+    color: #0e0e0f;
+    font-size: 20px;
+    line-height: 125%;
+    display: block;
+    padding-bottom: 6px;
+    font-weight: bold;
+    text-align: center;
+    /*margin-left: 25%;*/
+    /*margin-right: 25%;*/
+}
+.line{
+    margin: 5%;
+}
+.userstatsUl{
+    padding-left: 5%;
+    width: 100%;
+}
+.userstatsLi{
+    width: 100%;
+    padding-bottom: 20px;
+}
+.fa{
+    font-size: 20px;
+}
+.from  {
+    padding: 5px;
+    text-align: left;
+    Font-Family :Helvetica Neue,Helvetica, Arial, sans-serif;
+    Font-Size :18px ;
+    Line-Height :14px;
+}
+.area {
+    float: right;
+    font-weight: bold;
+    margin-right:5% ;
+    font-size: 20px;
+    Font-Family :Helvetica Neue,Helvetica, Arial, sans-serif;
+    color: #595962;
+}
+.fa-check-circle{
+    color: #5890FF;
+}
+

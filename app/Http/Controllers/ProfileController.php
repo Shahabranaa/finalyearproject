@@ -20,6 +20,7 @@
         public function profile()
         {
             $user = Auth::user();
+
 //            $profile =Profile::where('user_id' , $user->id)->first();
             return view('profile',['user' => $user]);
         }
@@ -54,7 +55,6 @@
                     $request->user()->profile->languages()->save($l);
                 }
             }
-
             if(is_array($request['Skill'])) {
                 foreach ($request['Skill'] as $skill) {
                     $sk = new Skill();
@@ -65,5 +65,6 @@
 //
               }
             }
+                return redirect()->route('profile');
         }
     }
