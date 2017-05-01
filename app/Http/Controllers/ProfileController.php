@@ -6,6 +6,7 @@
     use App\Language;
     use App\Skill;
     use App\Profile;
+    use Illuminate\Support\Facades\Storage;
     use Session;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,14 @@
 
         public function createProfile(Request $request)
         {
+            $user = Auth::user();
             $file = $request->file('profileImage');
+            $filename = $request->file('name').'-'. $user->id;
+            if($file){
+                Storage::disk('local')->put($filename, $file);
+
+            }
+//            $filename = $file->store('local');
             $filename = $file->store('local');
             $filecnic = $request->file('cnic');
             $filenamecnic = $filecnic->store('local');

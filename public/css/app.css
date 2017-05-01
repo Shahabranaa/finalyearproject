@@ -90,7 +90,7 @@
 body{
     background-color: #F7F7F7;
 }
-.userName  {
+.userName {
     color: #0e0e0f;
     font-size: 20px;
     line-height: 125%;
@@ -98,14 +98,11 @@ body{
     padding-bottom: 6px;
     font-weight: bold;
     text-align: center;
-    /*margin-left: 25%;*/
-    /*margin-right: 25%;*/
 }
 .line{
-    margin: 5%;
 }
 .userstatsUl{
-    padding-left: 5%;
+    padding-left: 0;
     width: 100%;
 }
 .userstatsLi{
@@ -125,7 +122,6 @@ body{
 .area {
     float: right;
     font-weight: bold;
-    margin-right:5% ;
     font-size: 20px;
     Font-Family :Helvetica Neue,Helvetica, Arial, sans-serif;
     color: #595962;
@@ -134,3 +130,18 @@ body{
     color: #5890FF;
 }
 
+.callButton{
+    width: 90%;
+    margin: 5%;
+}
+.panel{
+    border: solid 1px gainsboro;
+    box-shadow:  0 0 10px #e2e2e2;
+    padding: 5%;
+}
+.description , .Language{
+    color: #0e0e0f;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 7px;
+}
