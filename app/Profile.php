@@ -11,13 +11,13 @@ class Profile extends Model
     {
         return $this->hasOne('App\Address');
     }
-    public function languages()
+    public function language_profiles()
     {
-        return $this->hasMany('App\Language');
+        return $this->hasMany('App\Language_Profile');
     }
-    public function skills()
+    public function profile_skills()
     {
-        return $this->hasMany('App\Skill');
+        return $this->hasMany('App\Profile_skill');
     }
     public function user()
     {
@@ -27,4 +27,9 @@ class Profile extends Model
     {
         return $this->hasMany('App\Gig');
     }
+//    public function reviews()
+//    {
+//        return $this->hasMany('App\Review');
+//    }
+
 }

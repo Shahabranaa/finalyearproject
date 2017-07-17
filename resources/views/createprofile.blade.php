@@ -1,6 +1,8 @@
 
 @extends('layouts.app')
 @section('content')
+    @include('menunav')
+
 
     <div class="container">
         <div class="row">
@@ -37,43 +39,21 @@
                                         <div class="panel panel-default">
                                             <!-- Default panel contents -->
                                             <div class="panel-heading">Choosse Language </div>
+                                            <?php
+                                            $languages = \App\Language::orderBy('id', 'DESC')->get();
+                                            ?>
+                                            @foreach($languages as $language)
+
                                             <ul class="list-group checkbox-group">
                                                 <li class="list-group-item">
-                                                    English
+                                                  {{  ucfirst($language->language)}}
                                                     <div class=" pull-right">
-                                                        <input id="languageEnglish" name="language[]" type="checkbox" value="english" required="required" />
-                                                        <label for="languageEnglish" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Urdu
-                                                    <div class="maXterial-switch pull-right">
-                                                        <input id="languagesUrdu" name="language[]" type="checkbox" value="urdu"required="required"/>
-                                                        <label for="languagesUrdu" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Punjabi
-                                                    <div class="maXterial-switch pull-right">
-                                                        <input id="languagePunjabi" name="language[]" type="checkbox" value="punjabi"required="required"/>
-                                                        <label for="languagePunjabi" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Pashtoon
-                                                    <div class="maXterial-switch pull-right">
-                                                        <input id="languagePashtoon" name="language[]" type="checkbox" value="pashtoon"required="required"/>
-                                                        <label for="languagePashtoon" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Sindi
-                                                    <div class="maXterial-switch pull-right">
-                                                        <input id="languageSindi" name="language[]" type="checkbox" value="sindi"required="required"/>
-                                                        <label for="languageSindi" class="label-primary"></label>
+                                                        <input id=" {{$language->language}}" name="Language[]" value="{{$language->language}}" required type="checkbox"  />
+                                                        <label for=" {{$language->language}}" class="label-primary"></label>
                                                     </div>
                                                 </li>
                                             </ul>
+                                            @endforeach
                                         </div>
                                     </div>
 
@@ -83,43 +63,20 @@
                                         <div class="panel panel-default">
                                             <!-- Default panel contents -->
                                             <div class="panel-heading">Choose Skill </div>
+                                            <?php
+                                            $skills = \App\Skill::orderBy('id', 'DESC')->get();;
+                                            ?>
+                                            @foreach($skills as $skill)
                                             <ul class="list-group" >
                                                 <li class="list-group-item">
-                                                    Plumber
+                                                    {{ucfirst($skill->skill)}}
                                                     <div class=" pull-right">
-                                                        <input id="plumber" name="Skill[]" value="plumber"  type="checkbox" required="required" />
-                                                        <label for="plumber" class="label-primary"></label>
+                                                        <input id=" {{$skill->skill}}" name="Skill[]" value="{{$skill->skill}}" required type="checkbox"  />
+                                                        <label for=" {{$skill->skill}}" class="label-primary"></label>
                                                     </div>
                                                 </li>
-                                                <li class="list-group-item">
-                                                    Technican
-                                                    <div class=" pull-right">
-                                                        <input id="technican" name="Skill[]" value="technican" type="checkbox" required="required"/>
-                                                        <label for="technican" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Ac-Technican
-                                                    <div class="pull-right">
-                                                        <input id="acTechnican" name="Skill[]" value="acTechnican" type="checkbox"required="required"/>
-                                                        <label for="acTechnican" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Maid
-                                                    <div class=" pull-right">
-                                                        <input id="maid" name="Skill[]" value="maid" type="checkbox"required="required"/>
-                                                        <label for="maid" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                                <li class="list-group-item">
-                                                    Painter
-                                                    <div class=" pull-right">
-                                                        <input id="painter" name="Skill[]" value="painter" type="checkbox"required="required"/>
-                                                        <label for="painter" class="label-primary"></label>
-                                                    </div>
-                                                </li>
-                                            </ul>
+                                              </ul>
+                                                @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -130,7 +87,7 @@
                             <div class="form-group{{ $errors->has('mobile') ? ' has-error' : '' }}">
                                 <label for="mobile" class="col-md-4 control-label">Mobile #</label>
                                 <div class="col-md-4">
-                                    <input id="mobile" class="form-control" name="mobile" required>
+                                    <input id="mobile" class="form-control" required  name="mobile" >
                                     @if ($errors->has('mobile'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('mobile') }}</strong>
@@ -144,7 +101,7 @@
                             <div class="form-group {{ $errors->has('image') ? ' has-error' : '' }}" >
                                 <label for="profileImage" class="col-md-4 control-label">Profile Picture</label>
                                 <div class="col-md-4">
-                                    <input id="profileImage" class="btn btn-default btn-file " type="file" style="" name="profileImage" required >
+                                    <input id="profileImage" class="btn btn-default btn-file " required type="file" style="" name="profileImage"  >
                                     @if ($errors->has('profileImage'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('profileImage') }}</strong>
@@ -152,13 +109,12 @@
                                     @endif
                                 </div>
                             </div>
-
                             {{--Cnic Image select--}}
 
                             <div class="form-group {{ $errors->has('cnic') ? ' has-error' : '' }}" >
                                 <label for="cnic" class="col-md-4 control-label">CNIC Picture</label>
                                 <div class="col-md-4">
-                                    <input id="cnic" class="btn btn-default btn-file " type="file" style="" name="cnic" required >
+                                    <input id="cnic" class="btn btn-default btn-file " type="file" required name="cnic"  >
                                     @if ($errors->has('cnic'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('cnic') }}</strong>
@@ -172,7 +128,7 @@
                             <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
                                 <label for="city" class="col-md-4 control-label">Address</label>
                                 <div class="col-md-2">
-                                    <select name="city" id="price" type="" class="form-control"  value="{{ old('city') }}" required>
+                                    <select name="city" id="price" type="" class="form-control"  value="{{ old('city') }}" >
                                         <option value="">Select City</option>
                                         <option value="lahore">Lahore</option>
                                         <option value="faislabad">Faislabad</option>
@@ -191,7 +147,7 @@
 
                                 <div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
                                     <div class="col-md-2">
-                                        <select name="area" id="price" type="" class="form-control"  value="{{ old('area') }}" required>
+                                        <select name="area" id="price" type="" class="form-control"  value="{{ old('area') }}" >
                                             <option value="">Select Area</option>
                                             <option value="Johar Town">Johar town</option>
                                             <option value="Modal Town">Model town</option>

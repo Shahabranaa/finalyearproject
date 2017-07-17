@@ -16,11 +16,10 @@ class CreateGigsTable extends Migration
         Schema::create('gigs', function (Blueprint $table) {
             $table->integer('profile_id');
             $table->string('gigtitle');
-            $table->string('category');
-            $table->string('description');
+            $table->integer('category_id');
+            $table->text('description');
             $table->string('price');
             $table->string('image');
-
             $table->increments('id');
             $table->timestamps();
         });

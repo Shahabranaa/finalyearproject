@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Gig;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $gigs = Gig::all();
+//            $profile =Profile::where('user_id' , $user->id)->first();
+        return view('welcome',['gigs' => $gigs]);
     }
 
 

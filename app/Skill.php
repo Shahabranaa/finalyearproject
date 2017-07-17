@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     //
-    public function profiles()
+    public function profile_skill()
     {
-        return $this->belongsTo('App\Profile', 'foreign_key');
+        return $this->belongsTo('App\Profile_Skill');
     }
+
 }

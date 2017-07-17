@@ -1,6 +1,7 @@
 
 @extends('layouts.app')
 @section('content')
+    @include('menunav')
 
     <div class="container">
         <div class="row">
@@ -33,10 +34,12 @@
                                 <div class="col-md-4">
                                     <select name="category" id="category" type="" class="form-control"  value="{{ old('category') }}" required>
                                         <option value="">Select a Category</option>
-                                        <option value="Plumber">Pumbler</option>
-                                        <option value="Ac-Technician">Ac Technicain</option>
-                                        <option value="Maid">Maid</option>
-                                        <option value="Dilvery-boy">Dilvery Boy</option>
+                                        <?php
+                                        $cate = \App\Category::all();
+                                        ?>
+                                        @foreach($cate as $cates)
+                                            <option value="{{$cates->category}}">{{$cates->category}}</option>
+                                        @endforeach
                                     </select>
                                     @if ($errors->has('category'))
                                         <span class="help-block">
@@ -84,31 +87,12 @@
 
                                 <select name="price" id="price" type="" class="form-control"  value="{{ old('price') }}" required>
                                     <option value="">Select Price</option>
-                                    <option value="200">Rs 200</option>
-                                    <option value="400">Rs 400</option>
-                                    <option value="600">Rs 600</option>
-                                    <option value="800">Rs 800</option>
-                                    <option value="1000">Rs 1000</option>
-                                    <option value="1200">Rs 1200</option>
-                                    <option value="1400">Rs 1400</option>
-                                    <option value="1600">Rs 1600</option>
-                                    <option value="1800">Rs 1800</option>
-                                    <option value="2000">Rs 2000</option>
-                                    <option value="2200">Rs 2200</option>
-                                    <option value="2400">Rs 2400</option>
-                                    <option value="2600">Rs 2600</option>
-                                    <option value="2800">Rs 2800</option>
-                                    <option value="3000">Rs 3000</option>
-                                    <option value="3200">Rs 3200</option>
-                                    <option value="3400">Rs 3400</option>
-                                    <option value="3600">Rs 3600</option>
-                                    <option value="3800">Rs 3800</option>
-                                    <option value="4000">Rs 4000</option>
-                                    <option value="4200">Rs 4200</option>
-                                    <option value="4400">Rs 4400</option>
-                                    <option value="4600">Rs 4600</option>
-                                    <option value="4800">Rs 4800</option>
-                                    <option value="5000">Rs 5000</option>
+                                    <?php
+                                    $prices = \App\Price::all()
+                                    ?>
+                                    @foreach($prices as $price)
+                                        <option value="{{$price->price}}">{{$price->price}}</option>
+                                    @endforeach
                                 </select>
                                 @if ($errors->has('price'))
                                     <span class="help-block">

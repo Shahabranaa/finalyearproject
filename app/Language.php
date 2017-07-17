@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Language extends Model
 {
     //
-    public function profiles()
+    public function language_profile()
     {
-        return $this->belongsTo('App\Profile', 'foreign_key');
+        return $this->belongsTo('App\Language_Profile');
     }
 }

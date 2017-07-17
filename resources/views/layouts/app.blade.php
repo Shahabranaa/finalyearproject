@@ -10,105 +10,39 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <link href="/css/app.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/mobile.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+{{--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>--}}
+    {{--<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>--}}
+
+
 
 
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
+                'csrfToken' => csrf_token(),
         ]); ?>
     </script>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+<div id="app">
+    @include('headernav')
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+    @yield('content')
+</div>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                     </a>
-                </div>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+<script src="/js/app.js"></script>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li ><a  href="{{ url('/login') }}">Login</a></li>
-                            <li ><a href="{{ url('/register') }}">Register</a></li>
-                        @else
-                            <li><a class="create-gig" href="{{ url('/create-gig') }}">Create Gig</a></li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                    <li><a href="{{ url('/profile') }}">Profile</a></li>
-                                </ul>
-                            </li>
-
-                        @endif
-                    </ul>
-
-                </div>
-
-            </div>
-        </nav>
-        <nav class="navbar  navbar-default nav-menu">
-            <div class="container">
-                <ul class="nav  navbar-nav menu-ul">
-                    <li class="active"><a href="#">Plubmer</a></li>
-                    <li><a href="#">Electrican</a></li>
-                    <li><a href="#">Ac Technican </a></li>
-                    <li><a href="#">Maid</a></li>
-                    <li><a href="#">Painter</a></li>
-                    <li><a href="#">Dilvery boy</a></li>
-                    <li><a href="#">Electrican</a></li>
-                    <li><a href="#">Ac Technican </a></li>
-                    <li><a href="#">Maid</a></li>
-                    <li><a href="#">Painter</a></li>
-                    <li><a href="#">Dilvery boy</a></li>
-                </ul>
-            </div>
-        </nav>
-
-
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
 </body>
 </html>

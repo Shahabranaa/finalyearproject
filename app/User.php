@@ -12,14 +12,15 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var arrays
      */
     public function profile()
     {
         return $this->hasOne('App\Profile');
     }
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','facebook_id',
     ];
 
     /**
